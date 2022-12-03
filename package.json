@@ -1,0 +1,83 @@
+{
+    "name": "advent-of-code-2022",
+    "version": "1.0.0",
+    "description": "Advent of Code 2022",
+    "license": "ISC",
+    "author": "Aes Sedai",
+    "type": "module",
+    "scripts": {
+        "build": "tsc --build",
+        "dev": "NODE_ENV=development npx nodemon src/day-3/index.ts",
+        "start": "npm run build && cross-env NODE_ENV=production node build/index.js"
+    },
+    "nodemonConfig": {
+        "execMap": {
+            "ts": "ts-node-esm --experimental-specifier-resolution=node"
+        },
+        "ext": "ts,js,json",
+        "ignore": [
+            "node_modules/**/node_modules"
+        ],
+        "restartable": "rs"
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "arrowParens": "always",
+        "singleQuote": false,
+        "jsxSingleQuote": false,
+        "semi": false,
+        "trailingComma": "none",
+        "jsxBracketSameLine": true,
+        "printWidth": 120
+    },
+    "eslintConfig": {
+        "parser": "@typescript-eslint/parser",
+        "parserOptions": {
+            "project": "./tsconfig.json"
+        },
+        "plugins": [
+            "@typescript-eslint"
+        ],
+        "extends": [
+            "eslint:recommended",
+            "plugin:@typescript-eslint/recommended",
+            "plugin:import/typescript",
+            "prettier"
+        ],
+        "rules": {
+            "no-void": "off",
+            "@typescript-eslint/no-dynamic-delete": "off",
+            "@typescript-eslint/no-non-null-assertion": "off",
+            "@typescript-eslint/no-unused-vars": "off",
+            "@typescript-eslint/restrict-template-expressions": "off"
+        },
+        "root": true
+    },
+    "dependencies": {
+        "async": "^3.2.4",
+        "radash": "^8.0.3-alpha.1",
+        "zod": "^3.19.1"
+    },
+    "devDependencies": {
+        "@types/async": "^3.2.15",
+        "@types/node": "^18.8.2",
+        "@typescript-eslint/eslint-plugin": "^5.39.0",
+        "@typescript-eslint/parser": "^5.39.0",
+        "eslint": "^8.24.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-import-resolver-typescript": "^3.5.1",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-promise": "^6.0.1",
+        "eslint-plugin-unused-imports": "^2.0.0",
+        "nodemon": "^2.0.20",
+        "prettier": "^2.7.1",
+        "prettier-plugin-organize-imports": "^3.1.1",
+        "rimraf": "^3.0.2",
+        "ts-loader": "^9.3.1",
+        "ts-node": "^10.8.1",
+        "ts-toolbelt": "^9.6.0",
+        "typescript": "^4.7.4"
+    }
+}
