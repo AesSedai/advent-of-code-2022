@@ -8,7 +8,7 @@ const isLetter = (input: string): boolean => {
 
 const schema = z.string().array()
 
-// load data from file; split by newline to get each tournament round
+// load data from file; split by newline to get each line
 const data = schema.parse(
     (await fs.promises.readFile("./src/day-5/input.txt")).toString("utf8").slice(0, -1).split("\n\n")
 )
@@ -88,5 +88,5 @@ const resultTwo = Object.entries(stackTwo)
         return (acc += curr[1][0])
     }, "")
 
-console.log("resultOne", resultOne)
-console.log("resultTwo", resultTwo)
+console.log("result one", resultOne)
+console.log("result two", resultTwo)
