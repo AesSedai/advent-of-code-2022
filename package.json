@@ -7,7 +7,7 @@
     "type": "module",
     "scripts": {
         "build": "tsc --build",
-        "dev": "NODE_ENV=development npx nodemon src/day-11/index.ts",
+        "dev": "NODE_ENV=development npx nodemon src/day-12/index.ts",
         "start": "npm run build && cross-env NODE_ENV=production node build/index.js"
     },
     "nodemonConfig": {
